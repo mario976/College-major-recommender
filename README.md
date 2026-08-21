@@ -3,6 +3,7 @@
 A machine learning system that helps university students choose the right major by clustering their academic performance in prerequisite courses and recommending departments where similar-performing students have historically done well. Built as a Bachelor's graduation project at Cairo University's Faculty of Computers and Artificial Intelligence (FCAI).
 
 ![Excel exploratory dashboard](images/01_excel_dashboard.png)
+
 *Initial exploratory dashboard used to understand pass/fail rates, enrollments, and top-performer trends before modeling.*
 
 ## Problem
@@ -16,12 +17,14 @@ Every year, sophomore students at FCAI have to pick a major without much data to
 - **Clustering:** K-Means (K=5, one cluster per major: CS, IS, AI, IT, DS) grouped students by prerequisite-course performance to find which grade patterns associate with which majors.
 
 ![K-Means clusters (PCA-reduced)](images/02_kmeans_pca_clusters.png)
+
 *Students clustered by prerequisite-course performance, reduced to 2D via PCA — each color is one major cluster.*
 
 - **Recommendation system:** For each student, the two prerequisite-course scores for every department are summed and ranked, producing an ordered list of the 5 best-fit majors. A GPA-eligibility check (based on each department's minimum GPA) then filters that list down to majors the student can actually enroll in.
 - **Correlation check:** Prerequisite-course performance was found to correlate with actual major choice at only **28.2%** — evidence that students are largely choosing majors without connecting them to where they're academically strongest.
 
 ![Correlation matrix](images/03_correlation_matrix.png)
+
 *Correlation between prerequisite-course scores — the weak correlation with chosen major supports the "students choose blindly" finding.*
 
 ## Results
